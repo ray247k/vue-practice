@@ -13,9 +13,9 @@
     輸入台幣：<input type="number" v-model="NT">
 
     <ul>
+      <!-- 可以直接在雙花括號內執行 computed，取代將運算邏輯放在 template 中造成維護困難 -->
       <li>日幣目前匯率：<br />可換得：{{jpy}}元</li>
       <li>美金目前匯率：<br />可換得：{{usd}}元</li>
-
     </ul>
 
   </div>
