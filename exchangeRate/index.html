@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>匯率計算機</title>
+</head>
+<body>
+    <div id="app">
+        <h2>台幣匯率轉換計算機</h2>
+        輸入台幣：<input type="number" v-model="NT">
+        
+        <ul>
+          <li>日幣目前匯率：<br />可換得：{{jpy}}元</li>
+          <li>美金目前匯率：<br />可換得：{{usd}}元</li>
+          
+        </ul>
+        
+      </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <script type="text/javascript" src="exchangeRate.js"></script>
+</body>
