@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="index.css" type="text/css" rel="stylesheet" />
+  <title>TodoList</title>
+</head>
+
+<body>
+  <div class="todolist">
+    <h2>請輸入代辦事項</h2>
+    <input type="text" placeholder="代辦事項" @keyup.enter="addTodo(newTodo)" v-model="newTodo">
+    <h2>代辦事項列表</h2>
+    <ul>
+      <li v-for="todo in todos" v-bind:class="{ active: todo.completed }">
+        <input type="checkbox" v-model="todo.completed">
+        {{todo.content}}
+        - <a href="#" @click.prevent="removeTodo(todo)">刪除</a>
+      </li>
+    </ul>
+    <hr>
+    <div>
+      <h2> debugger </h2>
+      {{this.todos}}
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <script type="text/javascript" src="todolist.js"></script>
+</body>
+
+</html>
