@@ -11,9 +11,20 @@
 <body>
   <div class="todolist">
     <h2>請輸入代辦事項</h2>
+    <!-- 
+      @keyup.enter 是 v-on:keyup.enter 的簡寫，代表綁定了 keyup 中的 enter 事件
+      然後會執行 addTodo(newTodo)，用 v-model 對資料進行雙向綁定
+    -->
     <input type="text" placeholder="代辦事項" @keyup.enter="addTodo(newTodo)" v-model="newTodo">
     <h2>代辦事項列表</h2>
     <ul>
+      <!-- 
+        v-for="todo in todos" 是 vue.js 裡面執行 for 迴圈的方法，會把 data 中的 todos 遍歷成 todo
+        v-bind:class 也可以只簡寫成 :class 代表綁定 class 並根據 todo.completed 的值來決定要不要加入 class="active"
+        在 checkbox 中 使用 v-model 來雙向綁定當前值的 todo.completed 屬性
+        利用 {{todo.content}} 印出代辦內容，@click.prevent 綁定了 click 事件，並用 prevent 這個事件修飾符來阻止預設行為(超連結)
+        改為觸發 我們定義的 removeTodo(todo) 事件
+      -->
       <li v-for="todo in todos" v-bind:class="{ active: todo.completed }">
         <input type="checkbox" v-model="todo.completed">
         {{todo.content}}
@@ -22,7 +33,7 @@
     </ul>
     <hr>
     <div>
-      <h2> debugger </h2>
+      <h2> debugger 印出 js 陣列中所有代辦事項的資料</h2>
       {{this.todos}}
     </div>
   </div>
