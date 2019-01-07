@@ -12,6 +12,7 @@ window.onload = function () {
             // 這邊的 this 都是指這個 Vue 物件內的 data
             addTodo: function (todo) {
                 this.todos.push({ content: todo, completed: false })
+                this.newTodo=''
             },
             removeTodo: function (todo) {
                 // indexOf(todo) 可以查詢到輸入內容位在陣列哪個位置
