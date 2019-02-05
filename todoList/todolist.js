@@ -23,6 +23,12 @@ window.onload = function () {
         this.todos.forEach(element => {
           element.completed = true
         });
+      },
+      activeAll: function () {
+        // 遍歷所有內容將 completed 設為 false
+        this.todos.forEach(element => {
+          element.completed = false
+        });
       }
     }
   })
